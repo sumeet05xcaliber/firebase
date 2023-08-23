@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <label>Email</label>
+    <input name="email" id="email" type="email">
+   </div>
+   <div>
+    <label>Password</label>
+    <input name="Password" id="Password" type="password">
+   </div>
+   <!-- <div>
+    <label>bio</label>
+    <input name="bio" id="bio" type="text">
+   </div> -->
+   <button onclick="register()">Register</button>
+   <button onclick="login()">Login</button>
+   
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<!-- Other Firebase SDK scripts if needed -->
+<script src="index.js"></script>
+
+</html>

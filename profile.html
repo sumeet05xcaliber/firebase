@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <div>
+        <p id="userBio"></p>
+        <button onclick="displayBio()">read bio</button>
+    </div>
+    <div>
+        <label>Enter your dirary content</label>
+        <textarea id="userBioo"></textarea>
+        <button onclick="saveBio()">Save Bio</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
