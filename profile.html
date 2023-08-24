@@ -7,14 +7,16 @@
 </head>
 <body>
     <div>
-        <label>Diary Content</label>
-        <input type="text" id="diary" placeholder="Enter diary entry">
-        <button id="submitButton" onclick="Submit()">Submit</button>
-        <button id="updateButton" onclick="Update()" style="display: none">Update</button>  
-        <label for="date">Enter date</label>
-        <input type="date" id="date" name="date">
-        <button onclick="fetchDiary()">Fetch Diary</button>
-        <p id="diaryEntries"></p>
+        <label for="date">Select Date: </label>
+        <input type="date" id="date" required>
+        <button onclick="fetchOrCreateDiary()">Fetch or Create Diary</button>
+        <br>
+        <textarea id="diary" rows="4" cols="50" placeholder="Enter diary entry"></textarea>
+        <br>
+        <button onclick="Submit()" id="submitButton">Save</button>
+        <button onclick="Update()" id="updateButton" style="display: none">Save</button>
+
+        <div id="diaryEntries"></div>
     </div>
     
     
