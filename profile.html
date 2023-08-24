@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Diary Content</label>
+        <input type="text" id="diary" placeholder="Enter diary entry">
+        <button id="submitButton" onclick="Submit()">Submit</button>
+        <button id="updateButton" onclick="Update()" style="display: none">Update</button>  
+        <label for="date">Enter date</label>
+        <input type="date" id="date" name="date">
+        <button onclick="fetchDiary()">Fetch Diary</button>
+        <p id="diaryEntries"></p>
+    </div>
+    
+    
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="profile.js"></script>
+</html>
