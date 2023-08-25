@@ -79,33 +79,33 @@ const Update = () => {
             console.log(err);
         });
 };
-document.addEventListener("DOMContentLoaded", function () {
+
+  document.addEventListener("DOMContentLoaded", function () {
     const voiceButton = document.getElementById("voiceButton");
     voiceButton.addEventListener("click", startVoiceRecognition);
   });
-  function startVoiceRecognition() {
-    const inputVal = document.getElementById('diary').value;
-    const enteredDate = document.getElementById('date').value;
-    // const selectedDate = new Date(enteredDate);
   
-    // if (isNaN(selectedDate)) {
-    //   console.log("Invalid date format.");
-    //   return;
-    // }
+  function startVoiceRecognition() {
+    const enteredDate = document.getElementById('date').value;
+    
     const recognition = new window.webkitSpeechRecognition();
     recognition.lang = "en-US";
   
     recognition.onresult = function (event) {
       const recognizedText = event.results[0][0].transcript;
-      const recognizedElement = document.getElementById("diary");
-      recognizedElement.textContent = recognizedText;
+      const diaryTextArea = document.getElementById("diary");
+      const existingText = diaryTextArea.value;
+  
+      // Concatenate recognized text with existing content
+      const newText = existingText + ' ' + recognizedText;
+  
+      diaryTextArea.value = newText;
   
       if (recognizedText.trim().toLowerCase()) {
         const todoText = recognizedText.trim();
         if (todoText !== "") {
-         colref.doc(enteredDate).set({
-            text: todoText,
-           
+          colref.doc(enteredDate).set({
+            data: newText,
           });
         }
       }
@@ -113,3 +113,4 @@ document.addEventListener("DOMContentLoaded", function () {
   
     recognition.start();
   }
+  
