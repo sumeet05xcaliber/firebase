@@ -18,7 +18,7 @@ document.getElementById("date").valueAsDate = new Date()
 const getdate=document.getElementById("date")
 getdate.addEventListener("change",()=>{
     const enteredDate = document.getElementById('date').value;
-    const diaryEntriesDiv = document.getElementById('diaryEntries');
+    const diaryEntriesDiv = document.getElementById('diary');
 
     colref.doc(enteredDate).get().then((doc) => {
         if (doc.exists) {
@@ -31,7 +31,7 @@ getdate.addEventListener("change",()=>{
 
             document.getElementById('diary').value = entryText;
         } else {
-            diaryEntriesDiv.textContent = "No diary entries found for the selected date.";
+            alert("No diaries on this date")
 
             document.getElementById('submitButton').style.display = 'block';
             document.getElementById('updateButton').style.display = 'none';
